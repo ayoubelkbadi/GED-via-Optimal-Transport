@@ -3,7 +3,7 @@ import torch
 import torch.nn.functional as F
 import numpy as np
 from torch_geometric.nn.conv import GCNConv, GINConv
-from layers import AttentionModule, TensorNetworkModule, sinkhorn, MatchingModule, GraphAggregationLayer, OTLayer
+from layers import AttentionModule, TensorNetworkModule, MatchingModule, GraphAggregationLayer, OTLayer
 from math import exp
 from GedMatrix import GedMatrixModule, SimpleMatrixModule, CostMatrixModule
 from ot.gromov import fused_gromov_wasserstein,fused_gromov_wasserstein2
