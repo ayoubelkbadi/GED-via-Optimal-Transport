@@ -5,7 +5,7 @@ import numpy as np
 from torch_geometric.nn.conv import GCNConv, GINConv
 from layers import AttentionModule, TensorNetworkModule, MatchingModule, GraphAggregationLayer, OTLayer
 from math import exp
-from GedMatrix import GedMatrixModule, SimpleMatrixModule, CostMatrixModule
+from GedMatrix import GedMatrixModule, CostMatrixModule
 from ot.gromov import fused_gromov_wasserstein,fused_gromov_wasserstein2
 
 class SimGNN(torch.nn.Module):
@@ -301,7 +301,6 @@ class GedGNN(torch.nn.Module):
 
         self.mapMatrix = GedMatrixModule(self.args.filters_3, self.args.hidden_dim)
         self.costMatrix = GedMatrixModule(self.args.filters_3, self.args.hidden_dim)
-        # self.costMatrix = SimpleMatrixModule(self.args.filters_3)
 
         # bias
         self.attention = AttentionModule(self.args)
