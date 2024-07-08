@@ -1,0 +1,13 @@
+# Running Parameters
+
+## Training and Testing
+```
+python src/main.py --model-name GEDIOT --dataset AIDS --model-epoch-start 0 --model-epoch-end 20 --model-train 1
+```
+
+## Testing
+```
+python src/main.py --model-name GEDIOT --dataset AIDS --model-epoch-start 20 --model-epoch-end 20 --model-train 1 --path
+python src/main.py --model-name GEDHOT --dataset AIDS --model-epoch-start 20 --model-epoch-end 20 --model-train 1 --GW --path
+python src/main.py --model-name GEDGW --dataset AIDS --GW --path
+```
