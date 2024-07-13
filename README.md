@@ -1,5 +1,5 @@
 # GED Computation with Optimal Transport
-Source codes and appendices of 'Computing Approximate Graph Edit Distance via Optimal Transport'
+Source codes of 'Computing Approximate Graph Edit Distance via Optimal Transport'
 
 ## Requirements
 All codes are implemented in python3.9
