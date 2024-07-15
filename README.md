@@ -1,7 +1,8 @@
 # GED Computation with Optimal Transport
 Source codes of 'Computing Approximate Graph Edit Distance via Optimal Transport'
 
-## Requirements
+## Getting Started
+### Requirements
 All codes are implemented in python3.9
 
 ```
@@ -16,17 +17,17 @@ torchvision               0.17.2
 texttable                 1.6.4
 tqdm                      4.65.0
 ```
-## Code Running
-### Datasets
+### Code Running
+#### Datasets
 The datasets we use are AIDS, Linux and IMDB from [GEDGNN](https://github.com/ChengzhiPiao/GEDGNN/tree/master)
 
-### Training
+#### Training
 An example of training GEDIOT on AIDS for 20 epochs
 ```
 python src/main.py --model-name GEDIOT --dataset AIDS --model-epoch-start 0 --model-epoch-end 20 --model-train 1
 ```
 The parameter `model-name` can be replaced by `GedGNN`, `TaGSim`, `GPN` and `SimGNN`
-### Testing
+#### Testing
 An example of testing GEDIOT, GEDHOT and GEDGW on AIDS. GEDIOT and GEDHOT use the 20-th epoch model
 ```
 python src/main.py --model-name GEDIOT --dataset AIDS --model-epoch-start 20 --model-epoch-end 20 --model-train 0 --path
