@@ -19,7 +19,7 @@ tqdm                      4.65.0
 ```
 ### Code Running
 #### Datasets
-The datasets we use are AIDS, Linux and IMDB from [GEDGNN](https://github.com/ChengzhiPiao/GEDGNN/tree/master). The ground-truth GEDs and node matching are stored in `TaGED.json`
+The datasets utilized in this study are AIDS, Linux and IMDB. These datasets are provided in the directory `./json_data`. The ground-truth GEDs and node matching are stored in the file `TaGED.json`
 
 #### Training
 An example of training GEDIOT on AIDS for 20 epochs
