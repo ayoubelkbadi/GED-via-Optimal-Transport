@@ -90,6 +90,24 @@ class GedMatrixModule(torch.nn.Module):
 
         return matrix.reshape(n1, n2)
 
+def test_mapping_loss2(mapping,gt_mapping):
+    mapping_loss = torch.nn.KLDivLoss(reduction="batchmean",log_target=True)
+    input = F.log_softmax(mapping,dim=1)
+    target = F.log_softmax(gt_mapping,dim=1) 
+    return mapping_loss(input,target)
+def test_mapping_loss(mapping,gt_mapping):
+    mapping_loss = torch.nn.KLDivLoss(reduction="batchmean",log_target=True)
+    n1, n2 = mapping.shape
+    num_non0 = torch.count_nonzero(gt_mapping).item()
+    num_0 = n1*n2-num_non0
+    input = F.log_softmax(mapping,dim=1)
+    target = F.log_softmax(gt_mapping,dim=1)
+    if num_non0 > num_0:
+        return mapping_loss(input,target)
+    p = 0.5*(1-num_non0/num_0)
+    mask = (torch.rand([n1, n2]) + gt_mapping) > p
+    return mapping_loss(input[mask],target[mask])
+
 def fixed_mapping_loss(mapping, gt_mapping):
     mapping_loss = torch.nn.BCEWithLogitsLoss()
     n1, n2 = mapping.shape
