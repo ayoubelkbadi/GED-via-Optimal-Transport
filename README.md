@@ -1,5 +1,5 @@
 # GED Computation with Optimal Transport
-Source codes of 'Computing Approximate Graph Edit Distance via Optimal Transport'
+Source codes of 'Computing Approximate Graph Edit Distance via Optimal Transport'，accepted by SIGMOD'25 Round3
 
 ## Getting Started
 ### Requirements
