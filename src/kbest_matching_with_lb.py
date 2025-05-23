@@ -20,7 +20,7 @@ class GedLowerBound(object):
     @staticmethod
     def mc(sg1, sg2):
         # calculate the ged between two aligned graphs
-        A = (sg1.adj() - sg2.adj()).coalesce().values()
+        A = (sg1.adj() - sg2.adj()).coalesce().val
         A_ged = (A ** 2).sum().item()
         F = sg1.ndata['f'] - sg2.ndata['f']
         F_ged = (F ** 2).sum().item()

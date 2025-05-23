@@ -692,5 +692,6 @@ class GEDGW(object):
         reverse = 3/2
         T_cg, log_cg = fused_gromov_wasserstein(
             self.cross_cost, self.cost1,self.cost2, self.mu, self.nu, 'square_loss',alpha=alpha_test,armijo=True,verbose=False, log=True)
+        print(f"DEBUG: fgw_dist brute = {log_cg['fgw_dist']}") # Ligne de débogage
         pre_ged = log_cg['fgw_dist']*reverse
         return T_cg[:self.n1,:], pre_ged.item()
